@@ -39,10 +39,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) {
         isOnGround = true;    
-        if(other.gameObject.CompareTag("Heart"))
-        {
-            Destroy(other.gameObject);
-            Debug.Log("Heart si eaten");
-        }
+        
+        //if(other.gameObject.CompareTag("Heart"))
+        //{
+        //    Destroy(other.gameObject);
+        //    Debug.Log("Heart si eaten");
+        //}
     }
 }

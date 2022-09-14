@@ -21,6 +21,7 @@ public class CollisionDetection : MonoBehaviour
         if(gameObject.CompareTag("Player") && other.gameObject.CompareTag("Heart"))
         {
             Destroy(other.gameObject);
+            Debug.Log("Heart si eaten");
         }
         else if(gameObject.CompareTag("Shot") && other.gameObject.CompareTag("Enemy"))
         {
