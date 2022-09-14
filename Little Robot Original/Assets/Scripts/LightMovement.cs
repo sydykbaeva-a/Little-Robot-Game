@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollisionWithHeart : MonoBehaviour
+public class LightMovement : MonoBehaviour
 {
+    public Vector3 rotation;
+    public float speed = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,6 @@ public class CollisionWithHeart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Rotate(rotation * Time.deltaTime * speed);
     }
 }

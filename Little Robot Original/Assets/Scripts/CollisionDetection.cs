@@ -15,4 +15,17 @@ public class CollisionDetection : MonoBehaviour
     {
         
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if(gameObject.CompareTag("Player") && other.gameObject.CompareTag("Heart"))
+        {
+            Destroy(other.gameObject);
+        }
+        else if(gameObject.CompareTag("Shot") && other.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }   
+    }
 }

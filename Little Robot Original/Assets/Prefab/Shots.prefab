@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 1328343214295506550}
   - component: {fileID: -4121443798152716056}
   - component: {fileID: -6649632270772314977}
+  - component: {fileID: -8973047559607983949}
   m_Layer: 0
   m_Name: Shots
-  m_TagString: Untagged
+  m_TagString: Shot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,8 +99,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.63826084
+  m_Center: {x: 0.023751259, y: 0, z: 0}
 --- !u!114 &1328343214295506550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,5 +140,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a520d33a15ce7224b94be6a65029db7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8973047559607983949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328343214295506509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c3e4cfc2de6da44fae5608083abf479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
