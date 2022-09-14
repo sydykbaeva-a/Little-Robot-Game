@@ -20,6 +20,7 @@ public class CollisionDetection : MonoBehaviour
     {
         if(gameObject.CompareTag("Player") && other.gameObject.CompareTag("Heart"))
         {
+            if(gameObject.CompareTag("Heart") && other.gameObject.CompareTag("Player"))
             Destroy(other.gameObject);
             Debug.Log("Heart si eaten");
         }
