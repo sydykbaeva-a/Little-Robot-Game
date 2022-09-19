@@ -18,13 +18,7 @@ public class CollisionDetection : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if(gameObject.CompareTag("Player") && other.gameObject.CompareTag("Heart"))
-        {
-            if(gameObject.CompareTag("Heart") && other.gameObject.CompareTag("Player"))
-            Destroy(other.gameObject);
-            Debug.Log("Heart si eaten");
-        }
-        else if(gameObject.CompareTag("Shot") && other.gameObject.CompareTag("Enemy"))
+        if(other.gameObject.CompareTag("Enemy"))
         {
             Destroy(other.gameObject);
             Destroy(gameObject);

@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float gravityModifier;
     public bool isOnGround = true;
     private Vector3 offset = new Vector3(1, 0, 0);
+    public bool endOfGame = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,12 +39,19 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other) {
-        isOnGround = true;    
-        
-        //if(other.gameObject.CompareTag("Heart"))
-        //{
-        //    Destroy(other.gameObject);
-        //    Debug.Log("Heart si eaten");
-        //}
+        if(other.gameObject.CompareTag("Heart"))
+        {
+            Destroy(other.gameObject);
+            Debug.Log("Heart + 1");
+        }
+        else if(other.gameObject.CompareTag("Ground"))
+        {
+            isOnGround = true; 
+        }
+        else if(other.gameObject.CompareTag("Enemy"))
+        {
+            endOfGame = true;
+            Debug.Log("Game Over");
+        }  
     }
 }

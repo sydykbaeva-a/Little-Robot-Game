@@ -300,6 +300,7 @@ MonoBehaviour:
   shotPrefab: {fileID: 1328343214295506509, guid: 2167b0dda692daa48962349f590d905c, type: 3}
   gravityModifier: 1.5
   isOnGround: 0
+  endOfGame: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,7 +424,7 @@ GameObject:
   - component: {fileID: 862545575}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
