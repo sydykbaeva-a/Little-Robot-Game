@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public bool isOnGround = true;
     private Vector3 offset = new Vector3(1, 0, 0);
     public bool endOfGame = false;
+    public ParticleSystem jumpParticle;
+    public ParticleSystem groundParticle;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +27,9 @@ public class PlayerController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.UpArrow) && isOnGround == true)
         {
+            groundParticle.Stop();
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            jumpParticle.Play();
             isOnGround = false;
         }
         
@@ -34,8 +38,8 @@ public class PlayerController : MonoBehaviour
             Instantiate(shotPrefab, transform.position + offset, shotPrefab.transform.rotation);
         }
 
-        horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
+        //horizontalInput = Input.GetAxis("Horizontal");
+        //transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
     }
 
     private void OnCollisionEnter(Collision other) {
@@ -47,6 +51,8 @@ public class PlayerController : MonoBehaviour
         else if(other.gameObject.CompareTag("Ground"))
         {
             isOnGround = true; 
+            groundParticle.Play();
+            jumpParticle.Stop();
         }
         else if(other.gameObject.CompareTag("Enemy"))
         {

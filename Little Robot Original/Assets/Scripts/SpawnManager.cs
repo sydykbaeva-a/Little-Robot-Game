@@ -8,7 +8,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject heartPrefab;
     private int posY;
     private float delayTime = 2;
-    private float repeatTime = 1.7f;
+    private float repeatTime = 1.2f;
     private float delayTime2 = 4;
     private float repeatTime2 = 10;
     private PlayerController playerScript;
