@@ -82,8 +82,8 @@ ModelImporter:
       name: Run
       takeName: Armature|ArmatureAction.001
       internalID: 0
-      firstFrame: 40
-      lastFrame: 80
+      firstFrame: 55
+      lastFrame: 77
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

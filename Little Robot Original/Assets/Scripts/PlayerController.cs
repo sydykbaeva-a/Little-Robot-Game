@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem jumpParticle;
     public ParticleSystem groundParticle;
     public Animator animator;
+    public HealthController healthControl;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,6 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         Physics.gravity *= gravityModifier;
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -55,7 +55,6 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.CompareTag("Heart"))
         {
             Destroy(other.gameObject);
-            Debug.Log("Heart + 1");
         }
         else if(other.gameObject.CompareTag("Ground"))
         {
@@ -65,8 +64,13 @@ public class PlayerController : MonoBehaviour
         }
         else if(other.gameObject.CompareTag("Enemy"))
         {
-            endOfGame = true;
-            Debug.Log("Game Over");
+            Destroy(other.gameObject);
+            healthControl.CheckHealth(-1);
+            if(healthControl.playerHealth == 0)
+            {
+                endOfGame = true;
+                Debug.Log("Game Over");
+            }
         }  
     }
 }
